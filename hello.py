@@ -160,11 +160,11 @@ queue = deque(users)
 users_deque = deque(users)
 def compare(p1,p2):
     if  p1["level"] > p2["level"]:
-        p1["wins"] -= 1
-        p2["wins"] += 1
+        p1["wins"] += 1
+        p2["wins"] -= 1
     if  p1["level"] < p2["level"]:
-        p1["wins"] -= 1
-        p2["wins"] += 1
+        p1["wins"] += 1
+        p2["wins"] -= 1
 for u in users:
   users_deque.popleft()
   for i in users_deque:
