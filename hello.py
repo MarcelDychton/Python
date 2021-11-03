@@ -82,8 +82,8 @@
 #     " Maciek ",
 # ]
 '''Pierwszy zjeżdza i idzie na koniec kolejki (każdy ma zjechać)'''
-from collections import deque
-queue = deque(Rollercoaster)
+# from collections import deque
+# queue = deque(Rollercoaster)
 
 # for p in Rollercoaster :
     # first_in_queue = queue[0]
@@ -115,3 +115,56 @@ queue = deque(Rollercoaster)
 #         was_there=True
 #     queue.append(first_in_queue)
 #     print(queue)
+# 
+users = [ 
+    {
+     "name": "Wacek",
+     "level": 10,
+     "wins": 0 ,},
+     {
+     "name": "Jarek",
+     "level": 8,
+     "wins": 0 ,},
+     {
+     "name": "Andrzej",
+     "level": 1,
+     "wins": 0 ,},
+     {
+     "name": "Zbyszek",
+     "level": 15,
+     "wins": 0 ,},
+     {
+     "name": "Tomek",
+     "level": 4,
+     "wins": 0 ,},
+     {
+     "name": "Mateusz",
+     "level": 5,
+     "wins": 0 ,}
+ ]
+from collections import deque
+queue = deque(users)
+# for p in (queue) :
+#     first_in_queue = queue[0]
+#     if lista_graczy[0]["level"]>lista_graczy[1]["level"]:
+#         lista_graczy[0]["wins"]=+1
+#         lista_graczy[1]["wins"]=-1
+#     if lista_graczy[0]["level"]<lista_graczy[1]["level"]:
+#         lista_graczy[0]["wins"]=-1
+#         lista_graczy[1]["wins"]=+1
+#     if lista_graczy[0]["level"] == lista_graczy[1]["level"]:
+#         queue.popleft()
+#         queue.append(first_in_queue)
+# print(queue)
+users_deque = deque(users)
+for u in users:
+  users_deque.popleft()
+  for i in users_deque:
+    if users_deque[0]["level"]>users_deque[1]["level"]:
+        users_deque[0]["wins"]=+1
+        users_deque[1]["wins"]=-1
+    if users[0]["level"]<users_deque[1]["level"]:
+        users_deque[0]["wins"]=-1
+        users_deque[1]["wins"]=+1
+    
+print(users) 
