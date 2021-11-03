@@ -9,3 +9,5 @@
 *Pętle*
 
 *Funkcje*
+
+*Ćwiczenia podsumuwujące: rollercoaster*
