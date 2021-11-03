@@ -1,4 +1,9 @@
+'''Kurs programowania w Python'''
+
+
 # print("hello") 
+
+"""Tworzenie pojdeynczego gracza"""
 Player = {
     "nick": "Ziom",
     "level": 100,
@@ -6,6 +11,7 @@ Player = {
     "hp":100,
 }
 # print("Gracz "+Player["nick"]+" ma poziom "+str(Player["level"])) 
+"""Lista graczy"""
 arr = [
     {
     "nick": "Ziom",
@@ -28,6 +34,7 @@ arr.append({
 # print(arr)
 arr.pop()
 # print(arr)
+"""Tworzenie kolejki"""
 from collections import deque 
 queue = deque(arr)
 queue.append({"nick": "Ziom4",
@@ -49,9 +56,19 @@ queue.popleft()
 #         if 100 < L["hp"]:
 #             print(L) 
 #   Funkcje  
-def addExp(player,exp=20):
-    player["hp"] += exp/2 
-    player["level"] += exp
-    print(player["level"])
+'''Funkcja dodaje exp do levela gracza i połowe exp do hp gracza'''
+# def addExp(player,exp=20):
+#     '''Funkcja dodaje exp do levela gracza i połowe exp do hp gracza'''
+#     player["hp"] += exp/2 
+#     player["level"] += exp
+# for p in arr:
+#     addExp(p)
     
-addExp(Player)
+# print(arr)
+# print((addExp.__doc__))
+ 
+"""Funkcja range"""
+# # FUNKCJE
+# names = ["Jarek", "Grzesiek", "Marysia", "Piotrek","Zenon"]
+# for i in range(3):
+#     print(names[i])
