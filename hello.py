@@ -173,28 +173,62 @@ queue = deque(users)
 #       compare(u,i) 
 # print(users) 
 
+'''Ćwiczenie ze zbliżającymi się graczami'''
+# players = [
+#     {
+#      "name": "Mateusz",
+#      "position": [-5,0],
+#     },
+#     {
+#      "name": "Jarek",
+#      "position": [5,0]
+#      },
+# ]
+
+# def move(x,y):
+#     # if x["Mateusz"] < x["Jarek"]:
+#     #     x["Mateusz"] += 1
+#     # if x["Mateusz"] > x["Jarek"]:
+#     #     x["Mateusz"] -= 1
+#     # if y["Mateusz"] < y["Jarek"]:
+#     #     y["Jarek"] -= 1
+#     # if y["Mateusz"] > y["Jarek"]:
+#     #     y["Jarek"] += 1
+#     # if x["Mateusz"] == x["Jarek"] and  y["Mateusz"] == y["Jarek"]:
+#     #         break
+# # for m in players:
+# #     move
+
+# print(players)
+
+'''Ćwiczenia podsumowujące'''
 Players = [
     {
      "name": "Mateusz",
-     "position": [-5,0],
+     "position": [6,-4],
     },
     {
      "name": "Jarek",
-     "position": [5,0]
+     "position": [-7,2]
      },
 ]
+def move(p1,p2):
+  """x"""
+  result = True
+  if p1["position"][0] < p2["position"][0]:
+      p1["position"][0] += 1
+  if p1["position"][0] > p2["position"][0]:
+      p1["position"][0] -= 1
+  if p1["position"][1] < p2["position"][1]:
+      p1["position"][1] += 1
+  if p1["position"][1] > p2["position"][1]:
+      p1["position"][1] -= 1
+  if p1["position"][0] == p2["position"][0] and  p1["position"][1] == p2["position"][1]:
+    result = False
+  return result
+  #   return True
 
-def move(x,y):
-    if x["Mateusz"] < x["Jarek"]:
-        x["Mateusz"] += 1
-    if x["Mateusz"] > x["Jarek"]:
-        x["Mateusz"] -= 1
-    if y["Mateusz"] < y["Jarek"]:
-        y["Jarek"] -= 1
-    if y["Mateusz"] > y["Jarek"]:
-        y["Jarek"] += 1
-    if x["Mateusz"] == x["Jarek"] and  y["Mateusz"] == y["Jarek"]:
-            break
-for m in Players:
-    move
+while(move(Players[0],Players[1])):
+  move(Players[1],Players[0])
+  print(Players)
 print(Players)
