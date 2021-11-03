@@ -159,17 +159,42 @@ queue = deque(users)
 # print(queue)
 
 '''Rozwiązanie ostateczne'''
-users_deque = deque(users)
-def compare(p1,p2):
-    if  p1["level"] > p2["level"]:
-        p1["wins"] += 1
-        p2["wins"] -= 1
-    if  p1["level"] < p2["level"]:
-        p1["wins"] -= 1
-        p2["wins"] += 1
-for u in users:
-  users_deque.popleft()
-  for i in users_deque:
-      compare(u,i) 
-print(users) 
+# users_deque = deque(users)
+# def compare(p1,p2):
+#     if  p1["level"] > p2["level"]:
+#         p1["wins"] += 1
+#         p2["wins"] -= 1
+#     if  p1["level"] < p2["level"]:
+#         p1["wins"] -= 1
+#         p2["wins"] += 1
+# for u in users:
+#   users_deque.popleft()
+#   for i in users_deque:
+#       compare(u,i) 
+# print(users) 
 
+Players = [
+    {
+     "name": "Mateusz",
+     "position": [-5,0],
+    },
+    {
+     "name": "Jarek",
+     "position": [5,0]
+     },
+]
+
+def move(x,y):
+    if x["Mateusz"] < x["Jarek"]:
+        x["Mateusz"] += 1
+    if x["Mateusz"] > x["Jarek"]:
+        x["Mateusz"] -= 1
+    if y["Mateusz"] < y["Jarek"]:
+        y["Jarek"] -= 1
+    if y["Mateusz"] > y["Jarek"]:
+        y["Jarek"] += 1
+    if x["Mateusz"] == x["Jarek"] and  y["Mateusz"] == y["Jarek"]:
+            break
+for m in Players:
+    move
+print(Players)
