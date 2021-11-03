@@ -116,6 +116,7 @@
 #     queue.append(first_in_queue)
 #     print(queue)
 # 
+'''Ćwiczenie z graczami i ich pojedynkami każdy z każdym i porównaniem'''
 users = [ 
     {
      "name": "Wacek",
@@ -123,23 +124,23 @@ users = [
      "wins": 0 ,},
      {
      "name": "Jarek",
-     "level": 8,
+     "level": 20,
      "wins": 0 ,},
      {
      "name": "Andrzej",
-     "level": 1,
+     "level": 30,
      "wins": 0 ,},
      {
      "name": "Zbyszek",
-     "level": 15,
+     "level": 40,
      "wins": 0 ,},
      {
      "name": "Tomek",
-     "level": 4,
+     "level": 50,
      "wins": 0 ,},
      {
      "name": "Mateusz",
-     "level": 5,
+     "level": 60,
      "wins": 0 ,}
  ]
 from collections import deque
@@ -157,14 +158,15 @@ queue = deque(users)
 #         queue.append(first_in_queue)
 # print(queue)
 users_deque = deque(users)
+def compare(p1,p2):
+    if  p1["level"] > p2["level"]:
+        p1["wins"] -= 1
+        p2["wins"] += 1
+    if  p1["level"] < p2["level"]:
+        p1["wins"] -= 1
+        p2["wins"] += 1
 for u in users:
   users_deque.popleft()
   for i in users_deque:
-    if users_deque[0]["level"]>users_deque[1]["level"]:
-        users_deque[0]["wins"]=+1
-        users_deque[1]["wins"]=-1
-    if users[0]["level"]<users_deque[1]["level"]:
-        users_deque[0]["wins"]=-1
-        users_deque[1]["wins"]=+1
-    
+      compare(u,i) 
 print(users) 
